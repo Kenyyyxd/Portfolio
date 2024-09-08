@@ -11,6 +11,21 @@
   font-family: "Ubuntu Sans Mono", monospace;
   --welcome-img: #1a1a1a;
   --svg-color: #646464;
+  --box: #1a1a1a;
+  --box1: #222222;
+  --box3: #1a1a1a;
+  --box4: #222222;
+  --box-color: #fff;
+  --bar: #000;
+  --bar1: #7b5a5a;
+  --bar2: #ffb2b2;
+  --form: #ffb2b2;
+  --form-field: #222222;
+  --text-field: #cfcfcf;
+  --scroll: #121212;
+  --scroll1: #ffb2b2;
+  --title: #222222;
+
 }
 .light-mode {
   --text-color: #3d0c11;
@@ -23,6 +38,21 @@
   --border-color: #3e001f;
   --welcome-img: #3d0c11;
   --svg-color: #dad4b5;
+  --box: #3d0c11;
+  --box1: #b6b08e;
+  --box3: #b6b08e;
+  --box4: #470007;
+  --box-color: #3d0c11;
+  --bar: #343131;
+  --bar1: #470007;
+  --bar2: #5f0811;
+  --form: #3d0c11;
+  --form-field: #3d0c11;
+  --text-field: #dad4b5;
+  --scroll: #5c5949;
+  --scroll1: #dad4b5;
+  --title: #b6b08e;
+  
 }
 
 /* switch */
@@ -75,7 +105,7 @@ body {
   background: var(--bg-color);
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(var(--bg-color), var(--primary));
+  background: linear-gradient(var(--scroll), var(--scroll1));
   border-radius: 10px;
 }
 
@@ -173,7 +203,7 @@ body {
   margin-top: 0;
 }
 .title {
-  background-color: var(--nav-color);
+  background-color: var(--title);
   border-radius: 7px;
   width: 100px;
   height: 15px;
@@ -266,7 +296,7 @@ label {
   height: 30px;
   border-radius: 8px;
   box-shadow: inset 2px 3px 5px rgb(5, 5, 5);
-  background-color: var(--card);
+  background-color: var(--box3);
   text-align: center;
 }
 .fa-envelope {
@@ -356,7 +386,7 @@ h2 {
   padding: 20px 20px;
   grid-column: span 13;
   box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
-  background-color: var(--card);
+  background-color: var(--box1);
   text-align: center;
 }
 .fa-pen-to-square {
@@ -378,7 +408,7 @@ p {
   padding: 20px 20px;
   grid-column: span 13;
   box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
-  background-color: var(--card);
+  background-color: var(--box1);
   text-align: center;
   margin-top: 10px;
 }
@@ -401,7 +431,7 @@ p {
   padding: 20px 20px;
   grid-column: span 13;
   box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
-  background-color: var(--card);
+  background-color: var(--box1);
   text-align: center;
   margin-top: 10px;
 }
@@ -490,10 +520,9 @@ p,
   width: 100%;
 }
 .drop button {
-  background: var(--card);
-  color: var(--text-color);
+  color: var(--text-field);
   box-shadow: 2px 3px 17px rgb(5, 5, 5);
-  background-color: var(--card);
+  background-color: var(--box);
   border-radius: 14px;
   padding: 10px 10px;
   width: 100%;
@@ -508,7 +537,7 @@ p,
 }
 .select a {
   display: block;
-  color: var(--text-color);
+  color: var(--text-field);
   text-decoration: none;
   line-height: 2;
   font-size: 14px;
@@ -516,7 +545,7 @@ p,
 }
 .select {
   margin-top: 0px;
-  background-color: var(--nav-color);
+  background-color: var(--box4);
   display: none;
   border-radius: 14px;
   padding: 10px 0px;
@@ -529,10 +558,10 @@ p,
   display: block;
 }
 .drop:hover button {
-  background-color: var(--nav-color);
+  background-color: var(--box4);
 }
 .drop a:hover {
-  background-image: linear-gradient(to right, var(--card), var(--nav-color));
+  background-image: linear-gradient(to right, var(--box), var(--box4));
   margin: 0px;
   transition: 0.3s;
 }
@@ -560,14 +589,14 @@ p,
 .projects a {
   grid-column: 1/9;
   margin: 30px 0;
-  background-color: var(--nav-color);
+  background-color: var(--box1);
   text-align: center;
   border-radius: 14px;
   text-decoration: none;
   box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
 }
 .projects a img {
-  max-width: 80%;
+  max-width: 90%;
   align-self: center;
   border-radius: 14px;
   margin: 20px 0;
@@ -577,7 +606,7 @@ p,
   animation-range: entry 25%;
 }
 .projects h4 {
-  color: var(--title-color);
+  color: var(--box-color);
   margin-top: 0px;
   font-size: 16px;
   font-weight: 100;
@@ -652,7 +681,7 @@ p,
   padding: 20px 30px;
 }
 .box {
-  background-color: var(--nav-color);
+  background-color: var(--box1);
   padding: 5px 5px;
   box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
   border-radius: 8px;
@@ -728,7 +757,7 @@ h5 {
 .skills {
   border-radius: 14px;
   box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
-  background-color: var(--card);
+  background-color: var(--box1);
   padding: 20px 20px;
   line-height: 0;
 }
@@ -743,7 +772,7 @@ h5 {
 .skills p {
   color: var(--text-color);
   font-size: 13px;
-  margin-top: 3px;
+  margin-top: 0px;
   grid-column: 4/9;
   margin-left: 20px;
   animation: CSSscrollReveal ease-in-out both;
@@ -751,7 +780,7 @@ h5 {
   animation-range: entry 0% cover 10%;
 }
 .bar1 {
-  background-color: #000;
+  background-color: var(--bar);
   grid-column: 1/13;
   height: 7px;
   margin-top: -20px;
@@ -761,7 +790,7 @@ h5 {
   animation-range: entry 0% cover 10%;
 }
 .bar2 {
-  background-image: linear-gradient(to left, #7b5a5a, #ffb2b2);
+  background-image: linear-gradient(to left, var(--bar1), var(--bar2));
   height: 7px;
   margin-top: -30px;
   border-radius: 50px;
@@ -772,7 +801,7 @@ h5 {
   animation-range: entry 0% cover 10%;
 }
 .bar3 {
-  background-image: linear-gradient(to left, #7b5a5a, #ffb2b2);
+  background-image: linear-gradient(to left, var(--bar1), var(--bar2));
   height: 7px;
   margin-top: -30px;
   border-radius: 50px;
@@ -844,7 +873,7 @@ h5 {
 }
 
 .form-heading {
-  color: var(--primary);
+  color: var(--form);
   font-size: 1.2em;
   align-self: center;
   margin-left: 0px;
@@ -863,7 +892,7 @@ h5 {
   border: none;
   outline: none;
   color: var(--title-color);
-  background-color: var(--nav-color);
+  background-color: var(--form-field);
   box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
   margin-top: 10px;
 }
@@ -873,7 +902,7 @@ h5 {
   border: none;
   outline: none;
   width: 100%;
-  color: var(--text-color);
+  color: var(--text-field);
   padding-inline: 1em;
 }
 
@@ -1489,6 +1518,7 @@ h5 {
   .form-card2 {
     grid-column: 3/11;
     margin-top: 30px;
+    background-color: var(--box1);
   }
 }
 
@@ -1696,5 +1726,8 @@ h5 {
     top: 20px;
     left: 20px;
     position: absolute;
+  }
+  .form-card2 {
+    background-color: var(--box1);
   }
 }
