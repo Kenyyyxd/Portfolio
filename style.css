@@ -1330,8 +1330,8 @@
     #welcome {
       height: 690px;
       width: 200px;
-      position: sticky;
-      margin-right: 20px;
+      position: fixed;
+      margin-left: -700px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -1343,7 +1343,7 @@
       width: 700px;
       justify-content: center;
       align-items: center;
-      margin-left: 0px;
+      margin-left: 360px;
       margin-top: 0px;
       transition: 0.5s;
     }
@@ -1369,8 +1369,8 @@
       cursor: default;
     }
     .site-nav{
-      width: 470px;
-      left: 52%;
+      width: 467px;
+      left: 53%;
       top: 58px;
       transition: 0.3s;
       padding-left: 20px;
@@ -1438,7 +1438,7 @@
       margin-left: 10px;
       width: 700px;
       margin-top: 0px;
-      margin-left: 0px;
+      margin-left: 360px;
       transition: 0.5s;
     }
     .projects {
@@ -1452,7 +1452,7 @@
       margin-left: 10px;
       width: 700px;
       margin-top: 0px;
-      margin-left: 0px;
+      margin-left: 360px;
       transition: 0.5s;
     }
     .fa-user-graduate {
@@ -1501,7 +1501,7 @@
       margin-left: 10px;
       width: 660px;
       margin-top: 0px;
-      margin-left: 0px;
+      margin-left: 360px;
       transition: 0.5s;
     }
     .form-card2 .form-field:nth-child(1) {
