@@ -1417,11 +1417,12 @@
       margin-top: 13px;
     }
     .about-me {
-      margin-top: 50px;
+      margin-top: 10px;
       font-weight: 700;
+      font-size: 26px;
     }
     .description {
-      margin-top: 110px;
+      margin-top: 80px;
     }
     .web-design {
       grid-column: span 13;
