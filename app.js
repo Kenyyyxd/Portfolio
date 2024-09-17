@@ -46,11 +46,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
               setTimeout(() => {
                   contentDiv.classList.remove('fade-in');
-              }, 200);
+              }, 100);
           };
 
           xhr.send();
-      }, 200);
+      }, 100);
   }
 
   loadPage(defaultPage);
