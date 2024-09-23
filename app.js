@@ -46,11 +46,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
               setTimeout(() => {
                   contentDiv.classList.remove('fade-in');
-              }, 100);
+              }, 0);
           };
 
           xhr.send();
-      }, 100);
+      }, 0);
   }
 
   loadPage(defaultPage);
@@ -76,23 +76,21 @@ function rotateAngledown() {
 
 //-- light mode / dark mode --//
 
-let darkmode = localStorage.getItem("light-mode");
-const themeSwitch = document.getElementById("theme-switch");
+const themeToggle = document.getElementById('themeToggle');
 
-const enableDarkmode = () => {
-  document.body.classList.add("light-mode");
-  localStorage.setItem("light-mode", "active");
-};
+if (localStorage.getItem('darkMode') === 'enabled') {
+    document.body.classList.add('dark-mode');
+    themeToggle.checked = true;
+} else {
+    document.body.classList.add('light-mode');
+}
 
-const disableDarkmode = () => {
-  document.body.classList.remove("light-mode");
-  localStorage.setItem("light-mode", null);
-};
-
-if (darkmode === "active") enableDarkmode();
-
-themeSwitch.addEventListener("click", () => {
-  darkmode = localStorage.getItem("light-mode");
-  darkmode !== "active" ? enableDarkmode() : disableDarkmode();
+themeToggle.addEventListener('change', function() {
+    if (this.checked) {
+        document.body.classList.replace('light-mode', 'dark-mode');
+        localStorage.setItem('darkMode', 'enabled');
+    } else {
+        document.body.classList.replace('dark-mode', 'light-mode');
+        localStorage.setItem('darkMode', 'disabled');
+    }
 });
-
