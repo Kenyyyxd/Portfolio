@@ -13,7 +13,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,100,0,0" />
     <script src="https://kit.fontawesome.com/68feb68111.js" crossorigin="anonymous"></script>
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-6J2LWPQE0F"></script>
     
 <script>
@@ -143,26 +142,24 @@
     const db = getDatabase(app);
     const visitorCountRef = ref(db, 'visitorCount');
 
-    // Check if the user has already visited
     if (!localStorage.getItem('hasVisited')) {
-        // If not visited, increment the count
+
         get(visitorCountRef).then((snapshot) => {
             if (snapshot.exists()) {
                 let currentCount = snapshot.val();
                 document.getElementById('visitor-count').innerText = currentCount;
-                set(visitorCountRef, currentCount + 1); // Increment count
+                set(visitorCountRef, currentCount + 1); 
             } else {
-                set(visitorCountRef, 1); // Initialize count to 1
+                set(visitorCountRef, 1);
                 document.getElementById('visitor-count').innerText = 1;
             }
         }).catch((error) => {
             console.error("Error getting visitor count:", error);
         });
 
-        // Set flag in local storage
         localStorage.setItem('hasVisited', 'true');
     } else {
-        // If visited, just retrieve the count without incrementing
+
         get(visitorCountRef).then((snapshot) => {
             if (snapshot.exists()) {
                 let currentCount = snapshot.val();
