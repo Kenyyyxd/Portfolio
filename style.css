@@ -1,124 +1,133 @@
 *{
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: "SF Pro Display Light", sans-serif;
+  letter-spacing: 1px;
 }
+
+@font-face {
+  font-family: SF Pro Display Light;
+  src: url("font/SF-Pro-Display-Light.otf") format("opentype");
+}
+
 /* variables */
-:root {
+.light-mode {
     --text-color: #cfcfcf;
-    --primary: #ffb2b2;
-    --bg-color: #121212;
-    --nav-color: #222222;
-    --accent-color: #64ffda;
-    --title-color: #fff;
-    --card: #1a1a1a;
+    --primary: #eb8532;
+    --accent-color: #fff;
+    --title-color: #ffffff;
+    --card: rgba(27, 27, 27, 0.8);;
     --border-color: #303030;
-    font-family: "Ubuntu Sans Mono", monospace;
-    --welcome-img: #1a1a1a;
-    --svg-color: #646464;
+    --border-color1: #4d4d4d;
     --box: #1a1a1a;
-    --box1: #222222;
-    --box3: #1a1a1a;
-    --box4: #222222;
-    --box-color: #fff;
     --bar: #000;
-    --bar1: #7b5a5a;
-    --bar2: #ffb2b2;
-    --form: #ffb2b2;
-    --form-field: #222222;
-    --text-field: #cfcfcf;
+    --bar1: #6d3100;
     --scroll: #121212;
-    --scroll1: #ffb2b2;
-    --title: #222222;
-  
+    --scroll1: #ad4e00;
+    --btn: #ad4e00;
   }
-  .light-mode {
-    --text-color: #3d0c11;
-    --primary: #343131;
-    --bg-color: #3d0c11;
-    --nav-color: #dad4b5;
-    --accent-color: #3d0c11;
-    --title-color: #3d0c11;
-    --card: #dad4b5;
-    --border-color: #3e001f;
-    --welcome-img: #3d0c11;
-    --svg-color: #dad4b5;
-    --box: #3d0c11;
-    --box1: #b6b08e;
-    --box3: #b6b08e;
-    --box4: #470007;
-    --box-color: #3d0c11;
-    --bar: #343131;
-    --bar1: #470007;
-    --bar2: #5f0811;
-    --form: #3d0c11;
-    --form-field: #3d0c11;
-    --text-field: #dad4b5;
-    --scroll: #5c5949;
-    --scroll1: #dad4b5;
-    --title: #b6b08e;
-    
-  }
-  
-  /* switch */
-  #theme-switch {
-    height: 30px;
-    width: 30px;
-    padding: 0;
-    border-radius: 50%;
-    background-color: var(--secondary-color);
-    display: flex;
-    border: 0px;
-    cursor: pointer;
-    top: 10px;
-    left: 10px;
-    position: relative;
-  }
-  #theme-switch svg {
-    fill: var(--svg-color);
-  }
-  #theme-switch svg:last-child {
-    display: none;
-  }
-  .light-mode #theme-switch svg:first-child {
-    display: none;
-  }
-  .light-mode #theme-switch svg:last-child {
-    display: block;
-  }
-  
-  /*font 
-  font-family: 'Brittany Signature', sans-serif;
-  font-family: 'mightyspidey', sans-serif;
-  font-family: "Ubuntu Sans Mono", monospace;
-  */
-  
-  body {
-    background-color: var(--bg-color);
-    overflow-x: hidden;
-    padding-bottom: 50px;
-    justify-content: center;
-  }
-  /* scrollbar */
-  ::-webkit-scrollbar {
-    width: 7px;
-  }
-  ::-webkit-scrollbar-track {
-    background: var(--bg-color);
-  }
-  ::-webkit-scrollbar-thumb {
-    background: linear-gradient(var(--scroll), var(--scroll1));
-    border-radius: 10px;
+  .dark-mode {
+    --text-color: #1a1a1a;
+    --primary: #751c01;
+    --accent-color: #7e0d0d;
+    --title-color: #000000;
+    --card: rgba(196, 196, 196, 0.8);
+    --border-color: #303030;
+    --border-color1: #5e0101;
+    --box: rgba(231, 231, 231, 0.8);
+    --bar: #696767;
+    --bar1: #c7a9a9;
+    --scroll: #cfcfcf;
+    --scroll1: #7e0d0d;
+    --btn: #ad4e00;
   }
 
-#content {
-  opacity: 1;
-  transition: opacity 0.1s ease-in-out;
+/* visitor count */
+.counter-container{
+  color: var(--title-color);
+  text-align: center;
 }
-#content.fade-out {
-  opacity: 0;
+.counter-container p{
+  font-size: 0.9em;
 }
-#content.fade-in {
-  opacity: 1;
+.number{
+  font-size: 2em;
+  font-family: "Brittany Signature", sans-serif;
 }
+  
+  /* switch */
+  .switch-container {
+    display: flex;
+    
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 35px;
+    height: 19px;
+    margin: 10px 0 0 20px;
+    transition: 0.5s;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 15px;
+    width: 15px;
+    left: 3px;
+    bottom: 2px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #5de24e;
+}
+
+input:checked + .slider:before {
+    transform: translateX(15px);
+}
+
+body {
+  background-image: url(img/light.jpg);
+  background-attachment: fixed;
+  overflow-x: hidden;
+  padding-bottom: 50px;
+  justify-content: center;
+}
+body.light-mode{
+  background-image: url(img/dark.jpg);
+}
+/* scrollbar */
+::-webkit-scrollbar {
+    width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: var(--box);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 10px;
+}
+
   
   /* mobile styles */
   .grid {
@@ -133,16 +142,16 @@
     width: 100%;
     margin-left: -8px;
     border-radius: 20px 20px 0 0;
-    background-color: var(--nav-color);
-    backdrop-filter: blur(10px);
-    box-shadow: 2px 5px 10px rgb(5, 5, 5);
+    background-color: var(--card);
+    backdrop-filter: blur(20px);
+    will-change: filter;
     z-index: 2;
     text-align: center;
     padding-top: 20px;
   }
 
   .site-nav a {
-    color: var(--accent-color);
+    color: var(--text-color);
     text-decoration: none;
     margin-right: 20px;
     font-size: 0.8em;
@@ -159,7 +168,8 @@
 
   #welcome {
     background-color: var(--card);
-    box-shadow: 2px 5px 10px rgb(5, 5, 5);
+    backdrop-filter: blur(20px);
+    will-change: filter;
     border-radius: 24px;
     margin: 20px 10px;
     max-width: 100%;
@@ -181,7 +191,7 @@
     margin-top: 0;
   }
   .title {
-    background-color: var(--title);
+    background-color: var(--box);
     border-radius: 7px;
     width: 100px;
     height: 18px;
@@ -198,23 +208,23 @@
     grid-column: 3/7;
     position: relative;
     align-self: center;
-    margin: 0 0;
+    margin: 2px 0;
   }
   .welcome-img {
-    background-color: var(--welcome-img);
+    background: var(--card);
+    will-change: filter;
     padding: 0;
     height: 100px;
     width: 100px;
     border-radius: 14px;
     margin-top: 0;
     grid-column: span 1;
-    box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
   }
   .welcome-img img {
-    max-height: 100%;
-    max-width: 100%;
+    max-height: 70%;
+    max-width: 70%;
     display: block;
-    margin: 0 auto;
+    margin: 15px auto;
   }
   
   /*check drop down*/
@@ -265,15 +275,13 @@
     display: flex;
     gap: 20px;
     grid-column: span 9;
-    padding: 0px 0px;
   }
   .email {
     margin-top: 20px;
     width: 30px;
     height: 30px;
-    border-radius: 8px;
-    box-shadow: inset 2px 3px 5px rgb(5, 5, 5);
-    background-color: var(--box3);
+    border-radius: 10px;
+    background-color: var(--card);
     text-align: center;
   }
   .fa-envelope {
@@ -314,9 +322,10 @@
     margin: 0 5px;
     transition: 0.3s;
   }
-  .socials a:hover {
-    color: var(--accent-color);
+  .socials a:hover{
+    color: var(--primary);
   }
+  
   
   /* about me */
   .grid {
@@ -326,7 +335,8 @@
   
   #about {
     background-color: var(--card);
-    box-shadow: 2px 5px 10px rgb(5, 5, 5);
+    backdrop-filter: blur(20px);
+    will-change: filter;
     border-radius: 24px;
     margin: 20px 10px;
     max-width: 100%;
@@ -338,7 +348,7 @@
   .about-me {
     color: var(--title-color);
     grid-column: 1/4;
-    font-size: 20px;
+    font-size: 1.3em;
     margin-top: 0px;
     position: absolute;
   }
@@ -349,111 +359,80 @@
   .description p {
     margin: 0px;
     color: var(--text-color);
-    font-size: 16px;
+    font-size: 1em;
     line-height: 1.5;
   }
   h2 {
     color: var(--title-color);
     grid-column: span 13;
-    font-size: 20px;
+    font-size: 1.3em;
   }
   .web-design {
-    border-radius: 14px;
+    border-radius: 24px;
     margin-top: 0px;
     padding: 20px 20px;
     grid-column: span 13;
-    box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
-    background-color: var(--box1);
     text-align: center;
-  }
-  .fa-pen-to-square {
-    color: var(--primary);
-    font-size: 30px;
+    background-color: var(--box);
   }
   .web-design h3 {
-    color: var(--title-color);
+    color: var(--text-color);
     text-align: center;
-    font-size: 16px;
+    font-size: 1em;
+    margin-top: 0px;
   }
   .web-design p {
     color: var(--text-color);
-    font-size: 14px;
+    font-size: 0.9em;
   }
   .web-development {
-    border-radius: 14px;
+    border-radius: 24px;
     margin-top: 0px;
     padding: 20px 20px;
     grid-column: span 13;
-    box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
-    background-color: var(--box1);
+    background-color: var(--box);
     text-align: center;
     margin-top: 10px;
   }
-  .fa-code {
-    color: var(--primary);
-    font-size: 30px;
-  }
   .web-development h3 {
-    color: var(--title-color);
+    color: var(--text-color);
     text-align: center;
-    font-size: 16px;
+    font-size: 1em;
+    margin-top: 0px;
   }
   .web-development p {
     color: var(--text-color);
-    font-size: 14px;
+    font-size: 0.9em;
   }
   .graphic-design {
-    border-radius: 14px;
+    border-radius: 24px;
     margin-top: 0px;
     padding: 20px 20px;
     grid-column: span 13;
-    box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
-    background-color: var(--box1);
+    background-color: var(--box);
     text-align: center;
     margin-top: 10px;
   }
-  .fa-palette {
+  .material-symbols-outlined{
     color: var(--primary);
-    font-size: 30px;
+    font-size: 50px;
   }
   .graphic-design h3 {
-    color: var(--title-color);
+    color: var(--text-color);
     text-align: center;
-    font-size: 16px;
+    font-size: 1em;
+    margin-top: 0px;
   }
   .graphic-design p {
     color: var(--text-color);
-    font-size: 14px;
-  }
-  
-  h2,
-  h3,
-  p,
-  .fa-palette,
-  .fa-code,
-  .description,
-  .description p,
-  .fa-pen-to-square {
-    animation: CSSscrollReveal ease-in-out both;
-    animation-timeline: view();
-    animation-range: entry 0% cover 10%;
-  }
-  
-  @keyframes CSSscrollReveal {
-    from {
-      opacity: 0;
-      transform: translateY(100px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    font-size: 0.9em;
   }
   
   /* portfolio page */
   #portfolio {
     background-color: var(--card);
-    box-shadow: 2px 5px 10px rgb(5, 5, 5);
+    backdrop-filter: blur(20px);
+    will-change: filter;
     border-radius: 24px;
     margin: 20px 10px;
     padding: 20px 30px;
@@ -461,82 +440,68 @@
   }
   .portfolio-text h1 {
     color: var(--title-color);
-    font-size: 20px;
+    font-size: 1.3em;
     margin-top: 0px;
   }
 
   /* portfolio images */
   .projects a {
     grid-column: 1/9;
-    margin: 30px 0;
-    background-color: var(--box1);
-    text-align: center;
-    border-radius: 14px;
+    margin: 10px 0;
+    border-radius: 24px;
     text-decoration: none;
-    box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+    background-color: transparent;
+  }
+  .thumbnail{
+    overflow: hidden;
+    border-radius: 24px;
+    animation: scaleUp 0.25s ease forwards;
+  }
+  @keyframes scaleUp {
+    0% { transform: scale(0.5); }
+    100% { transform: scale(1); }
   }
   .projects a img {
-    max-width: 90%;
+    max-width: 100%;
     align-self: center;
-    border-radius: 14px;
-    margin: 20px 0;
-    transition: 0.3s;
-    animation: appear linear;
-    animation-timeline: view();
-    animation-range: entry 25%;
+    border-radius: 24px;
+    margin: 0px auto;
+    transition: 0.2s ease, box-shadow 0.2s ease;
   }
+
   .projects h4 {
-    color: var(--box-color);
-    margin-top: 0px;
-    font-size: 16px;
-    font-weight: 400;
+    color: var(--title-color);
+    margin-top: 10px;
+    font-size: 1.2em;
+    font-weight: 500;
+    margin-left: 10px;
   }
-  .projects img:hover {
-    max-width: 90%;
-    box-shadow: 0px 0px 30px rgba(227, 228, 237, 0.1);
+  .projects p{
+    color: var(--text-color);
+    margin-top: -20px;
+    margin-left: 10px;
+    font-size: 0.9em;
+  }
+  .projects img:hover{
+    max-width: 100%;
     transform: scale(1.1);
-  }
-  .projects h4 {
-    animation: CSSscrollReveal ease-in-out both;
-    animation-timeline: view();
-    animation-range: entry 0% cover 15%;
-  }
-  @keyframes appear {
-    from {
-      opacity: 0;
-      scale: 0.5;
-    }
-    to {
-      opacity: 1;
-      scale: 1;
-    }
-  }
-  
-  @keyframes CSSscrollReveal {
-    from {
-      opacity: 0;
-      transform: translateY(100px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
   }
   
   /* Resume1 */
   #resume {
     background-color: var(--card);
-    box-shadow: 2px 5px 10px rgb(5, 5, 5);
+    backdrop-filter: blur(20px);
+    will-change: filter;
     border-radius: 24px;
     margin: 20px 10px;
     padding: 20px 30px;
     transition: 0.5s;
   }
   .box {
-    background-color: var(--box1);
+    background-color: var(--box);
     padding: 5px 5px;
-    box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
-    border-radius: 8px;
+    border-radius: 12px;
     text-align: center;
     align-content: center;
     width: 30px;
@@ -546,27 +511,25 @@
   }
   .education h2 {
     margin: 0px 10px;
-    font-size: 20px;
-    font-weight: 500;
+    font-size: 1.1em;
     margin-top: 10px;
     grid-column: 2/9;
   }
   .education p {
     grid-column: 2/9;
-    font-size: 16px;
+    font-size: 0.9em;
     margin-top: 10px;
     margin-left: 10px;
     line-height: 1.5;
     color: var(--text-color);
-    font-weight: 400;
   }
   .education h5 {
     grid-column: 2/9;
     margin-top: -20px;
     margin-left: 10px;
     color: var(--primary);
-    font-weight: 500;
     margin-bottom: 0px;
+    font-size: 0.7em;
   }
   .fa-user-graduate {
     color: var(--primary);
@@ -586,15 +549,15 @@
   .border1 {
     height: 100px;
     width: 1px;
-    background-color: var(--border-color);
+    background-color: var(--border-color1);
     position: absolute;
     margin-top: 35px;
     margin-left: 20px;
   }
   .border2 {
-    height: 45px;
+    height: 30px;
     width: 1px;
-    background-color: var(--border-color);
+    background-color: var(--border-color1);
     position: absolute;
     margin-top: 215px;
     margin-left: 20px;
@@ -602,38 +565,27 @@
   /* skills */
   .skills-text h1 {
     color: var(--text-color);
-    font-size: 20px;
+    font-size: 1.3em;
     margin-top: 30px;
-    animation: CSSscrollReveal ease-in-out both;
-    animation-timeline: view();
-    animation-range: entry 0% cover 10%;
   }
   .skills {
-    border-radius: 14px;
-    box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
-    background-color: var(--box1);
-    padding: 20px 20px;
+    border-radius: 24px;
+    background-color: var(--box);
+    padding: 20px 20px 10px 20px;
     line-height: 0;
   }
   .skills h2 {
     color: var(--text-color);
-    font-size: 16px;
+    font-size: 0.9em;
     display: flex;
-    font-weight: 500;
-    animation: CSSscrollReveal ease-in-out both;
-    animation-timeline: view();
-    animation-range: entry 0% cover 10%;
   }
   .skills p {
     color: var(--text-color);
-    font-size: 13px;
+    font-size: 0.8em;
     margin-top: 0px;
     grid-column: 4/9;
     margin-left: 20px;
-    font-weight: 400;
-    animation: CSSscrollReveal ease-in-out both;
-    animation-timeline: view();
-    animation-range: entry 0% cover 10%;
+    font-weight: 100;
   }
   .bar1 {
     background-color: var(--bar);
@@ -641,50 +593,32 @@
     height: 7px;
     margin-top: -20px;
     border-radius: 50px;
-    animation: CSSscrollReveal ease-in-out both;
-    animation-timeline: view();
-    animation-range: entry 0% cover 10%;
   }
   .bar2 {
-    background-image: linear-gradient(to left, var(--bar1), var(--bar2));
+    background-image: linear-gradient(to left, var(--bar1), var(--scroll1));
     height: 7px;
     margin-top: -30px;
     border-radius: 50px;
     grid-column: 1/13;
     width: 60%;
-    animation: CSSscrollReveal ease-in-out both;
-    animation-timeline: view();
-    animation-range: entry 0% cover 10%;
   }
   .bar3 {
-    background-image: linear-gradient(to left, var(--bar1), var(--bar2));
+    background-image: linear-gradient(to left, var(--bar1), var(--scroll1));
     height: 7px;
     margin-top: -30px;
     border-radius: 50px;
     grid-column: 1/13;
     width: 70%;
-    animation: CSSscrollReveal ease-in-out both;
-    animation-timeline: view();
-    animation-range: entry 0% cover 10%;
-  }
-  @keyframes CSSscrollReveal {
-    from {
-      opacity: 0;
-      transform: translateY(100px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
   }
   
   /* contact page */
   #contact-sec {
     background-color: var(--card);
+    backdrop-filter: blur(20px);
+    will-change: filter;
     max-width: 100%;
     margin: 20px 10px;
     border-radius: 24px;
-    box-shadow: 2px 5px 10px rgb(5, 5, 5);
     transition: 0.5s;
   }
   .form-card2 {
@@ -695,15 +629,14 @@
     padding-inline: 2em;
     padding-bottom: 0.4em;
     border-radius: 24px;
-    box-shadow: 2px 5px 10px rgb(5, 5, 5);
-    background-color: var(--card);
+    background-color: transparent;
     margin: 0px 0px;
     grid-column: 1/13;
   }
   
   .form-heading {
-    color: var(--form);
-    font-size: 20px;
+    color: var(--text-color);
+    font-size: 1.3em;
     align-self: center;
     margin-left: 0px;
     grid-column: 1/13;
@@ -720,9 +653,9 @@
     border: none;
     outline: none;
     color: var(--title-color);
-    background-color: var(--form-field);
-    box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+    background-color: var(--box);
     margin-top: 10px;
+    box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
   }
   
   .input-field {
@@ -730,7 +663,7 @@
     border: none;
     outline: none;
     width: 100%;
-    color: var(--text-field);
+    color: var(--text-color);
     padding-inline: 1em;
   }
   
@@ -741,21 +674,22 @@
     border-radius: 10px;
     border: none;
     outline: none;
-    background-color: transparent;
+    background-color: var(--box);
     color: var(--primary);
     font-weight: 400;
-    outline: 1px solid var(--accent-color);
-    transition: all ease-in-out 0.3s;
+    transition: all ease-in-out 0.2s;
     margin-top: 10px;
     grid-column: 1/13;
   }
   
   .sendMessage-btn:hover {
-    transition: all ease-in-out 0.3s;
-    background-color: var(--accent-color);
-    color: #000;
+    transition: all ease-in-out 0.2s;
+    background-color: var(--btn);
+    color: var(--box);
     cursor: pointer;
-    box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+  }
+  .fa-paper-plane{
+    margin-right: 5px;
   }
   
   .form-card2 .form-field:nth-child(1) {
@@ -773,6 +707,9 @@
   
   @media screen and (min-width: 580px) {
     
+    .switch{
+      margin: 20px 0 20px 60px;
+    }
     #welcome {
       margin: 0px 50px;
       margin-top: 0px;
@@ -872,11 +809,6 @@
       padding: 30px 40px;
       text-align: start;
     }
-    .fa-pen-to-square {
-      font-size: 40px;
-      margin-top: 10px;
-      position: absolute;
-    }
     h2{
       font-size: 22px;
     }
@@ -884,7 +816,7 @@
       text-align: start;
       font-size: 18px;
       margin-left: 60px;
-      margin-top: 0px;
+      margin-top: -45px;
     }
     .web-design p {
       font-size: 16px;
@@ -896,16 +828,11 @@
       padding: 30px 40px;
       text-align: start;
     }
-    .fa-code {
-      font-size: 35px;
-      margin-top: 15px;
-      position: absolute;
-    }
     .web-development h3 {
       text-align: start;
       font-size: 18px;
       margin-left: 60px;
-      margin-top: 0px;
+      margin-top: -45px;
     }
     .web-development p {
       font-size: 16px;
@@ -917,16 +844,11 @@
       padding: 30px 40px;
       text-align: start;
     }
-    .fa-palette {
-      font-size: 40px;
-      margin-top: 10px;
-      position: absolute;
-    }
     .graphic-design h3 {
       text-align: start;
       font-size: 18px;
       margin-left: 60px;
-      margin-top: 0px;
+      margin-top: -45px;
     }
     .graphic-design p {
       font-size: 16px;
@@ -968,10 +890,10 @@
     .border1 {
       max-height: 100px;
       margin-left: 20px;
-      margin-top: 40px;
+      margin-top: 35px;
     }
     #resume .border2 {
-      height: 40px;
+      height: 30px;
       margin-left: 20px;
       margin-top: 220px;
     }
@@ -1020,6 +942,9 @@
     }
     .form-card2 .form-field:nth-child(4) {
       grid-column: 1/13;
+    }
+    .site-nav a{
+      margin-left: 30px;
     }
   }
   
@@ -1073,11 +998,27 @@
       font-weight: 400;
       font-size: 16px;
     }
+    .drop-down .email-content:nth-child(1){
+      grid-column: 1/5;
+    }
+    .drop-down .email-content:nth-child(2){
+      grid-column: 6/9;
+    }
+    .drop-down .email-content:nth-child(3){
+      grid-column: 1/5;
+    }
+    .drop-down .email-content:nth-child(4){
+      grid-column: 6/9;
+    }
     .welcome-img {
       height: 150px;
       width: 150px;
       transition: 0.5s;
     }
+    .welcome-img img{
+      margin-top: 20px;
+    }
+    
     .name {
       font-size: 40px;
     }
@@ -1130,11 +1071,11 @@
     .border1 {
       margin-left: 25px;
       min-height: 140px;
-      margin-top: 47px;
+      margin-top: 42px;
     }
     #resume .border2 {
       margin-left: 25px;
-      margin-top: 310px;
+      margin-top: 305px;
       height: 40px;
     }
     .skills-text h1 {
@@ -1226,6 +1167,18 @@
     label {
       grid-column: 12/12;
     }
+    .drop-down .email-content:nth-child(1){
+      grid-column: 1/6;
+    }
+    .drop-down .email-content:nth-child(2){
+      grid-column: 9/13;
+    }
+    .drop-down .email-content:nth-child(3){
+      grid-column: 1/6;
+    }
+    .drop-down .email-content:nth-child(4){
+      grid-column: 9/13;
+    }
     .description {
       grid-column: 1/13;
     }
@@ -1237,7 +1190,7 @@
     }
     .graphic-design {
       grid-column: 1/7;
-      margin-top: -30px;
+      margin-top: -20px;
     }
     #about {
       transition: 0.5s;
@@ -1300,14 +1253,8 @@
     .form-card2 .form-field:nth-child(4) {
       grid-column: 1/13;
     }
-    .site-nav {
-      position: absolute;
-      width: 50%;
-      left: 45%;
-      top: 249px;
-      border-radius: 0 24px 0 24px;
-      transition: 0.5s;
-      background-color: var(--card);
+    .site-nav a{
+      margin-left: 50px;
     }
     #contact-sec {
       padding-bottom: 50px;
@@ -1328,7 +1275,7 @@
       padding-top: 50px;
     }
     #welcome {
-      height: 690px;
+      height: 640px;
       width: 200px;
       position: fixed;
       margin-left: -700px;
@@ -1374,15 +1321,32 @@
       top: 58px;
       transition: 0.3s;
       padding-left: 20px;
+      background-color: transparent;
+      position: absolute;
     }
     .site-nav a{
-      margin-right: 40px;
+      margin-left: 30px;
     }
     .drop-down {
       display: inline-block;
       justify-content: center;
       align-items: center;
       margin-top: 0px;
+    }
+    .drop-down .email-content:nth-child(1){
+      grid-column: 1/13;
+    }
+    .drop-down .email-content:nth-child(2){
+      grid-column: 1/13;
+      margin-top: -40px;
+    }
+    .drop-down .email-content:nth-child(3){
+      grid-column: 1/13;
+      margin-top: -40px;
+    }
+    .drop-down .email-content:nth-child(4){
+      grid-column: 1/13;
+      margin-top: -40px;
     }
     .border {
       width: 200px;
@@ -1433,7 +1397,7 @@
     }
     .graphic-design {
       grid-column: span 13;
-      margin-top: 0px;
+      margin-top: -15px;
     }
     #portfolio {
       margin-left: 10px;
@@ -1444,6 +1408,7 @@
     }
     .projects {
       margin-top: 0px;
+      row-gap: 0px;
     }
     .projects h4{
       font-size: 16px;
@@ -1461,29 +1426,35 @@
     }
     .fa-briefcase {
       font-size: 16px;
-      margin-top: 6px;
+      margin-top: 3px;
     }
     .education h2 {
       font-size: 22px;
       margin-left: 10px;
     }
     .education p {
-      font-size: 16px;
+      font-size: 17px;
       grid-column: 2/13;
       margin-left: 10px;
       margin-bottom: 30px;
       margin-top: -36px;
     }
     .education h5 {
-      font-size: 14px;
+      font-size: 13px;
       grid-column: 2/13;
       margin-left: 10px;
     }
     .education .border1 {
       min-height: 130px;
+      margin-left: 25px;
     }
     #resume .border2 {
-      min-height: 70px;
+      min-height: 43px;
+      margin-top: 300px;
+      margin-left: 25px;
+    }
+    .fa-circle-dot {
+      margin-left: 20.5px;
     }
     .skills-text h1 {
       font-size: 22px;
@@ -1525,5 +1496,20 @@
     .form-card2 {
       background-color: var(--box1);
     }
+    .switch-container{
+      position: fixed;
+      z-index: 20;
+    }
+    .switch{
+      margin-left: -400px;
+      margin-top: 640px;
+    }
+    /* visitor count */
+.counter-container{
+  position: fixed;
+  margin-top: 670px;
+  margin-left: -750px;
+}
+    
   }
   
