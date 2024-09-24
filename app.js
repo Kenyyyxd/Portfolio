@@ -94,3 +94,40 @@ themeToggle.addEventListener('change', function() {
         localStorage.setItem('darkMode', 'disabled');
     }
 });
+
+//-- icon change --//
+
+function changeFavicon() {
+    var favicon = document.getElementById('dynamic-favicon');
+    var currentHour = new Date().getHours();
+
+    if (currentHour >= 3 && currentHour < 4) {
+        favicon.href = 'img/icon/3-4.png';
+    } 
+    else if (currentHour >= 4 && currentHour < 6) {
+        favicon.href = 'img/icon/4-6.png';
+    } 
+    else if (currentHour >= 6 && currentHour < 10) { 
+        favicon.href = 'img/icon/6-10.png';
+    }
+    else if (currentHour >= 10 && currentHour < 15) {
+        favicon.href = 'img/icon/10-15.png';
+    }
+    else if (currentHour >= 15 && currentHour < 16) {
+        favicon.href = 'img/icon/15-16.png';
+    }
+    else if (currentHour >= 16 && currentHour < 17) { 
+        favicon.href = 'img/icon/16-17.png';
+    }
+    else if (currentHour >= 17 && currentHour < 19) {
+        favicon.href = 'img/icon/17-19.png';
+    }
+    else if (currentHour >= 19 && currentHour < 21) { 
+        favicon.href = 'img/icon/19-21.png';
+    }
+    else if ((currentHour >= 21 && currentHour < 24) || (currentHour >= 0 && currentHour < 3)) {
+        favicon.href = 'img/icon/21-3.png';
+    }
+}
+
+window.onload = changeFavicon;
