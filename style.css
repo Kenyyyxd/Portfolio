@@ -128,6 +128,14 @@ body.light-mode{
   border-radius: 10px;
 }
 
+@media screen and (max-width: 466px) {
+  .education .border1{
+    display: none;
+  }
+  .education .border2{
+    display: none;
+  }
+}
   
   /* mobile styles */
   .grid {
