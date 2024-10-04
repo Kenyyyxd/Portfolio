@@ -376,11 +376,13 @@ body {
     border-radius: 24px;
     text-decoration: none;
     background-color: transparent;
+    cursor: default;
   }
   .thumbnail{
     overflow: hidden;
     border-radius: 24px;
     animation: scaleUp 0.25s ease forwards;
+    cursor: pointer;
   }
   @keyframes scaleUp {
     0% { transform: scale(0.5); }
