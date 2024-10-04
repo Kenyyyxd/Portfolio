@@ -8,117 +8,30 @@
   src: url("font/SF-Pro-Display-Light.otf") format("opentype");
 }
 
-/* variables */
-.light-mode {
+/* colors */
+:root {
     --text-color: #cfcfcf;
-    --primary: #eb8532;
-    --accent-color: #fff;
+    --primary: #7a2222;
     --title-color: #ffffff;
-    --card: rgba(27, 27, 27, 0.8);;
-    --border-color: #303030;
-    --border-color1: #4d4d4d;
+    --card: #242424;
+    --border-color: #4d4d4d;
     --box: #1a1a1a;
     --bar: #000;
-    --bar1: #6d3100;
-    --scroll: #121212;
-    --scroll1: #ad4e00;
-    --btn: #ad4e00;
-  }
-  .dark-mode {
-    --text-color: #1a1a1a;
-    --primary: #751c01;
-    --accent-color: #7e0d0d;
-    --title-color: #000000;
-    --card: rgba(196, 196, 196, 0.8);
-    --border-color: #303030;
-    --border-color1: #5e0101;
-    --box: rgba(231, 231, 231, 0.8);
-    --bar: #696767;
-    --bar1: #c7a9a9;
-    --scroll: #cfcfcf;
-    --scroll1: #7e0d0d;
-    --btn: #ad4e00;
+    --bar1: #7a2222;
+    --scroll: #3f0b0b;
+    --btn: #551a1a;
+    --bg-color: #141414;
   }
 
-/* visitor count */
-.counter-container{
-  color: var(--title-color);
-  text-align: center;
-}
-.counter-container p{
-  font-size: 0.9em;
-}
-.number{
-  font-size: 2em;
-  font-family: "Brittany Signature", sans-serif;
-}
   
-  /* switch */
-  .switch-container {
-    display: flex;
-    
-}
-
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 35px;
-    height: 19px;
-    margin: 10px 0 0 20px;
-    transition: 0.5s;
-}
-
-.switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    transition: 0.4s;
-    border-radius: 34px;
-}
-
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 15px;
-    width: 15px;
-    left: 3px;
-    bottom: 2px;
-    background-color: white;
-    transition: 0.4s;
-    border-radius: 50%;
-}
-
-input:checked + .slider {
-    background-color: #5de24e;
-}
-
-input:checked + .slider:before {
-    transform: translateX(15px);
-}
-
 body {
-  background-image: url(img/light.jpg);
-  background-attachment: fixed;
-  overflow-x: hidden;
+  background-color: var(--bg-color);
   padding-bottom: 50px;
   justify-content: center;
 }
-body.light-mode{
-  background-image: url(img/dark.jpg);
-}
 /* scrollbar */
 ::-webkit-scrollbar {
-    width: 7px;
+    width: 6px;
 }
 ::-webkit-scrollbar-track {
   background: var(--box);
@@ -127,6 +40,7 @@ body.light-mode{
   background: var(--primary);
   border-radius: 10px;
 }
+
 
 @media screen and (max-width: 466px) {
   .education .border1{
@@ -150,9 +64,8 @@ body.light-mode{
     width: 100%;
     margin-left: -8px;
     border-radius: 20px 20px 0 0;
-    background-color: var(--card);
-    backdrop-filter: blur(20px);
-    will-change: filter;
+    background-color: #3a3a3ad3;
+    backdrop-filter: blur(5px);
     z-index: 2;
     text-align: center;
     padding-top: 20px;
@@ -172,12 +85,12 @@ body.light-mode{
   }
   .site-nav a.active {
     color: var(--primary);
+    font-size: 0.9em;
+    font-weight: 700;
   }
 
   #welcome {
     background-color: var(--card);
-    backdrop-filter: blur(20px);
-    will-change: filter;
     border-radius: 24px;
     margin: 20px 10px;
     max-width: 100%;
@@ -185,6 +98,7 @@ body.light-mode{
     display: flex;
     justify-content: center;
     transition: 0.5s;
+    box-shadow: 2px 5px 10px rgb(5, 5, 5);
   }
   .name {
     font-family: "Brittany Signature", sans-serif;
@@ -219,7 +133,7 @@ body.light-mode{
     margin: 2px 0;
   }
   .welcome-img {
-    background: var(--card);
+    background: var(--box);
     will-change: filter;
     padding: 0;
     height: 100px;
@@ -227,6 +141,7 @@ body.light-mode{
     border-radius: 14px;
     margin-top: 0;
     grid-column: span 1;
+    box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
   }
   .welcome-img img {
     max-height: 70%;
@@ -289,8 +204,9 @@ body.light-mode{
     width: 30px;
     height: 30px;
     border-radius: 10px;
-    background-color: var(--card);
+    background-color: var(--box);
     text-align: center;
+    box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
   }
   .fa-envelope {
     color: var(--primary);
@@ -343,8 +259,6 @@ body.light-mode{
   
   #about {
     background-color: var(--card);
-    backdrop-filter: blur(20px);
-    will-change: filter;
     border-radius: 24px;
     margin: 20px 10px;
     max-width: 100%;
@@ -352,6 +266,7 @@ body.light-mode{
     display: flex;
     justify-content: center;
     transition: 0.5s;
+    box-shadow: 2px 5px 10px rgb(5, 5, 5);
   }
   .about-me {
     color: var(--title-color);
@@ -382,6 +297,7 @@ body.light-mode{
     grid-column: span 13;
     text-align: center;
     background-color: var(--box);
+    box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
   }
   .web-design h3 {
     color: var(--text-color);
@@ -401,6 +317,7 @@ body.light-mode{
     background-color: var(--box);
     text-align: center;
     margin-top: 10px;
+    box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
   }
   .web-development h3 {
     color: var(--text-color);
@@ -420,6 +337,7 @@ body.light-mode{
     background-color: var(--box);
     text-align: center;
     margin-top: 10px;
+    box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
   }
   .material-symbols-outlined{
     color: var(--primary);
@@ -439,12 +357,11 @@ body.light-mode{
   /* portfolio page */
   #portfolio {
     background-color: var(--card);
-    backdrop-filter: blur(20px);
-    will-change: filter;
     border-radius: 24px;
     margin: 20px 10px;
     padding: 20px 30px;
     transition: 0.5s;
+    box-shadow: 2px 5px 10px rgb(5, 5, 5);
   }
   .portfolio-text h1 {
     color: var(--title-color);
@@ -493,18 +410,36 @@ body.light-mode{
   .projects img:hover{
     max-width: 100%;
     transform: scale(1.1);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    filter: blur(1px);
+  }
+  .overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
+    background-color: #707070ce;
+    padding: 10px;
+    border-radius: 12px;
+  }
+  .fa-eye{
+    color: #531d1d;
+    font-size: 24px
+  }
+  .thumbnail:hover .overlay-text{
+    opacity: 1;
   }
   
   /* Resume1 */
   #resume {
     background-color: var(--card);
-    backdrop-filter: blur(20px);
-    will-change: filter;
     border-radius: 24px;
     margin: 20px 10px;
     padding: 20px 30px;
     transition: 0.5s;
+    box-shadow: 2px 5px 10px rgb(5, 5, 5);
   }
   .box {
     background-color: var(--box);
@@ -516,6 +451,7 @@ body.light-mode{
     height: 25px;
     margin-top: 2px;
     z-index: 1;
+    box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
   }
   .education h2 {
     margin: 0px 10px;
@@ -548,7 +484,7 @@ body.light-mode{
     font-size: 16px;
   }
   .fa-circle-dot {
-    color: var(--accent-color);
+    color: var(--text-color);
     font-size: 10px;
     margin-top: 15px;
     margin-left: 15px;
@@ -557,7 +493,7 @@ body.light-mode{
   .border1 {
     height: 100px;
     width: 1px;
-    background-color: var(--border-color1);
+    background-color: var(--border-color);
     position: absolute;
     margin-top: 35px;
     margin-left: 20px;
@@ -565,7 +501,7 @@ body.light-mode{
   .border2 {
     height: 30px;
     width: 1px;
-    background-color: var(--border-color1);
+    background-color: var(--border-color);
     position: absolute;
     margin-top: 215px;
     margin-left: 20px;
@@ -581,6 +517,7 @@ body.light-mode{
     background-color: var(--box);
     padding: 20px 20px 10px 20px;
     line-height: 0;
+    box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
   }
   .skills h2 {
     color: var(--text-color);
@@ -603,7 +540,7 @@ body.light-mode{
     border-radius: 50px;
   }
   .bar2 {
-    background-image: linear-gradient(to left, var(--bar1), var(--scroll1));
+    background-image: linear-gradient(to left, var(--bar1), var(--scroll));
     height: 7px;
     margin-top: -30px;
     border-radius: 50px;
@@ -611,7 +548,7 @@ body.light-mode{
     width: 60%;
   }
   .bar3 {
-    background-image: linear-gradient(to left, var(--bar1), var(--scroll1));
+    background-image: linear-gradient(to left, var(--bar1), var(--scroll));
     height: 7px;
     margin-top: -30px;
     border-radius: 50px;
@@ -622,12 +559,11 @@ body.light-mode{
   /* contact page */
   #contact-sec {
     background-color: var(--card);
-    backdrop-filter: blur(20px);
-    will-change: filter;
     max-width: 100%;
     margin: 20px 10px;
     border-radius: 24px;
     transition: 0.5s;
+    box-shadow: 2px 5px 10px rgb(5, 5, 5);
   }
   .form-card2 {
     display: flex;
@@ -638,6 +574,7 @@ body.light-mode{
     padding-bottom: 0.4em;
     border-radius: 24px;
     background-color: transparent;
+    box-shadow: 2px 5px 10px rgb(5, 5, 5);
     margin: 0px 0px;
     grid-column: 1/13;
   }
@@ -693,7 +630,7 @@ body.light-mode{
   .sendMessage-btn:hover {
     transition: all ease-in-out 0.2s;
     background-color: var(--btn);
-    color: var(--box);
+    color: var(--text-color);
     cursor: pointer;
   }
   .fa-paper-plane{
@@ -714,13 +651,10 @@ body.light-mode{
   }
   
   @media screen and (min-width: 580px) {
-    
-    .switch{
-      margin: 20px 0 20px 60px;
-    }
+
     #welcome {
       margin: 0px 50px;
-      margin-top: 0px;
+      margin-top: 30px;
       transition: 0.5s;
     }
     .name {
@@ -1118,6 +1052,10 @@ body.light-mode{
     .site-nav {
       transition: 0.5s;
     }
+    .fa-eye{
+      color: #531d1d;
+      font-size: 20px
+    }
 
   }
   
@@ -1283,7 +1221,7 @@ body.light-mode{
       padding-top: 50px;
     }
     #welcome {
-      height: 640px;
+      height: 600px;
       width: 200px;
       position: fixed;
       margin-left: -700px;
@@ -1504,20 +1442,12 @@ body.light-mode{
     .form-card2 {
       background-color: var(--box1);
     }
-    .switch-container{
-      position: fixed;
-      z-index: 20;
+    .fa-eye{
+      font-size: 18px
     }
-    .switch{
-      margin-left: -400px;
-      margin-top: 640px;
+    .overlay-text{
+      border-radius: 10px;
     }
-    /* visitor count */
-.counter-container{
-  position: fixed;
-  margin-top: 670px;
-  margin-left: -750px;
-}
     
   }
   
