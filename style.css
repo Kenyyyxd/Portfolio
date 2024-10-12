@@ -99,7 +99,8 @@ body {
     justify-content: center;
     transition: 0.5s;
     box-shadow: 2px 5px 10px rgb(5, 5, 5);
-  }
+}
+
   .name {
     font-family: "Brittany Signature", sans-serif;
     color: var(--primary);
@@ -411,8 +412,7 @@ body {
   }
   .projects img:hover{
     max-width: 100%;
-    transform: scale(1.1);
-    filter: blur(1px);
+    transform: scale(1.05);
   }
   .overlay-text {
     position: absolute;
@@ -428,7 +428,7 @@ body {
   }
   .fa-eye{
     color: #531d1d;
-    font-size: 24px
+    font-size: 24px;
   }
   .thumbnail:hover .overlay-text{
     opacity: 1;
